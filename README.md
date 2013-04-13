@@ -12,4 +12,4 @@ To setup and run tests follow these steps:
 
 - go to the root directory of components
 - run: **composer install**
-- run: **phpunit -c tests**
+- run: **phpunit**
