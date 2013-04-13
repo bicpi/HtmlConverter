@@ -1,0 +1,32 @@
+{
+    "name":        "bicpi/bicpi-components",
+    "type":        "library",
+    "description": "bicpi's component library",
+    "keywords":    ["components", "html2text", "bicpi"],
+    "homepage":    "http://github.com/bicpi/bicpi-components",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "Philipp Rieber",
+            "homepage": "http://philipp-rieber.net"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/process": "2.*"
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+
+    "autoload": {
+        "psr-0": {
+            "bicpi\\Component": "src/"
+        }
+    }
+}
