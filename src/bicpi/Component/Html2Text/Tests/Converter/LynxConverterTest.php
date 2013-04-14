@@ -15,19 +15,15 @@ class LynxConverterTest extends BaseTestCase
         $converter = new LynxConverter();
         $plain = $converter->convert($this->getFixtureContent('sample.html'));
 
+        // If exists, remove LC (locale) dependent "References" line
+        if (false !== strpos($plain, "\n")) {
+            $aPlain = explode("\n", $plain);
+            if (isset($aPlain[count($aPlain)-4])) {
+                unset($aPlain[count($aPlain)-4]);
+            }
+            $plain = implode("\n", $aPlain);
+        }
+
         $this->assertEquals($this->getFixtureContent('lynx-sample-result.txt'), $plain);
-    }
-
-    /**
-     * @test
-     * @expectedException bicpi\Component\Html2Text\Exception\ConverterException
-     */
-    function failingConversionShouldAbort()
-    {
-        $converter = new LynxConverter();
-        $r = new \ReflectionClass($converter);
-        $r->setStaticPropertyValue('cmd', 'notExistingCliCommand %s');
-
-        $converter->convert($this->getFixtureContent('sample.html'));
     }
 }

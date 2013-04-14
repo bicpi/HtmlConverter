@@ -14,6 +14,5 @@
 
    ACME&Friends
 
-Verweise
 
    1. http://www.example.com/

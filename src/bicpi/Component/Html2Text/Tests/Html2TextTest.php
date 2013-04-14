@@ -34,6 +34,6 @@ class Html2TextTest extends BaseTestCase
 
         $converter = new Html2Text();
         $converter->addConverter($failing);
-        $converter->convert('<html>');
+        $converter->convert($this->getFixtureContent('sample.html'));
     }
 }
