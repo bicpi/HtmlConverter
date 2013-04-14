@@ -19,6 +19,25 @@ class Html2TextTest extends BaseTestCase
         $converter = new Html2Text();
         $converter->convert($this->getFixtureContent('sample.html'));
     }
+
+    /**
+     * @test
+     */
+    function conversionSuccessWithMockConverter()
+    {
+        $mockConverter = $this->getMock('bicpi\Component\Html2Text\Converter\ConverterInterface');
+        $mockConverter
+            ->expects($this->once())
+            ->method('convert')
+            ->will($this->returnValue('Foobar'));
+
+        $converter = new Html2Text();
+        $converter->addConverter($mockConverter);
+        $plain = $converter->convert('<h1>Foobar</h1>');
+
+        $this->assertEquals('Foobar', $plain);
+    }
+
     /**
      * @test
      * @expectedException \RuntimeException

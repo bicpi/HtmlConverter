@@ -24,7 +24,7 @@ class Html2Text implements ConverterInterface
         foreach ($this->converters as $converter) {
             /** @var $converter ConverterInterface */
             try {
-                $plain = $converter->convert($html);
+                return $converter->convert($html);
             } catch (ConverterException $e) {
                 continue;
             }
