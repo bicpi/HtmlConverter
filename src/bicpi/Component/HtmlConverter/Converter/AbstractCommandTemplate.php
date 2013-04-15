@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: devs
- * Date: 14.04.13
- * Time: 09:10
- * To change this template use File | Settings | File Templates.
- */
 
-namespace bicpi\Component\Html2Text\Converter;
-
+namespace bicpi\Component\HtmlConverter\Converter;
 
 use Symfony\Component\Process\Process;
-use bicpi\Component\Html2Text\Exception\ConverterException;
+use bicpi\Component\HtmlConverter\Exception\ConverterException;
 
 abstract class AbstractCommandTemplate implements ConverterInterface
 {

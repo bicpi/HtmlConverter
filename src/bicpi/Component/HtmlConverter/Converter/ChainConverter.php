@@ -1,18 +1,18 @@
 <?php
 
-namespace bicpi\Component\Html2Text\Converter;
+namespace bicpi\Component\HtmlConverter\Converter;
 
 use Symfony\Component\Process\Process;
-use bicpi\Component\Html2Text\Converter\ConverterInterface;
-use bicpi\Component\Html2Text\Exception\ConverterException;
+use bicpi\Component\HtmlConverter\Converter\ConverterInterface;
+use bicpi\Component\HtmlConverter\Exception\ConverterException;
 
 class ChainConverter implements ConverterInterface
 {
     protected $converters = array();
 
-    public function addConverter(ConverterInterface $converter)
+    public function addConverter(ConverterInterface $converter, $alias)
     {
-        $this->converters[] = $converter;
+        $this->converters[$alias] = $converter;
     }
 
     public function convert($html)

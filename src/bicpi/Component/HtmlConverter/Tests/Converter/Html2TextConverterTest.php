@@ -1,9 +1,9 @@
 <?php
 
-namespace bicpi\Component\Html2Text\Tests\Converter;
+namespace bicpi\Component\HtmlConverter\Tests\Converter;
 
-use bicpi\Component\Html2Text\Tests\Tool\BaseTestCase;
-use bicpi\Component\Html2Text\Converter\Html2TextConverter;
+use bicpi\Component\HtmlConverter\Tests\Tool\BaseTestCase;
+use bicpi\Component\HtmlConverter\Converter\Html2TextConverter;
 
 class Html2TextConverterTest extends BaseTestCase
 {

@@ -1,7 +1,6 @@
 <?php
 
-namespace bicpi\Component\Html2Text\Tests\Tool;
-
+namespace bicpi\Component\HtmlConverter\Tests\Tool;
 
 abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 {

@@ -1,7 +1,6 @@
 <?php
 
-namespace bicpi\Component\Html2Text\Exception;
-
+namespace bicpi\Component\HtmlConverter\Exception;
 
 class ConverterException extends \Exception
 {

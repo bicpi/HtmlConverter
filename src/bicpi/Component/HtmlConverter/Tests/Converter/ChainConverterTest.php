@@ -1,10 +1,10 @@
 <?php
 
-namespace bicpi\Component\Html2Text\Tests;
+namespace bicpi\Component\HtmlConverter\Tests;
 
-use bicpi\Component\Html2Text\Exception\ConverterException;
-use bicpi\Component\Html2Text\Converter\ChainConverter;
-use bicpi\Component\Html2Text\Tests\Tool\BaseTestCase;
+use bicpi\Component\HtmlConverter\Exception\ConverterException;
+use bicpi\Component\HtmlConverter\Converter\ChainConverter;
+use bicpi\Component\HtmlConverter\Tests\Tool\BaseTestCase;
 
 class Html2TextTest extends BaseTestCase
 {
@@ -24,14 +24,14 @@ class Html2TextTest extends BaseTestCase
      */
     function conversionSuccessWithMockConverter()
     {
-        $mockConverter = $this->getMock('bicpi\Component\Html2Text\Converter\ConverterInterface');
+        $mockConverter = $this->getMock('bicpi\Component\HtmlConverter\Converter\ConverterInterface');
         $mockConverter
             ->expects($this->once())
             ->method('convert')
             ->will($this->returnValue('Foobar'));
 
         $converter = new ChainConverter();
-        $converter->addConverter($mockConverter);
+        $converter->addConverter($mockConverter, 'mock');
         $plain = $converter->convert('<h1>Foobar</h1>');
 
         $this->assertEquals('Foobar', $plain);
@@ -44,14 +44,14 @@ class Html2TextTest extends BaseTestCase
      */
     function conversionShouldFailWithoutAnyConverterHandlingTheConversion()
     {
-        $failing = $this->getMock('bicpi\Component\Html2Text\Converter\ConverterInterface');
+        $failing = $this->getMock('bicpi\Component\HtmlConverter\Converter\ConverterInterface');
         $failing
             ->expects($this->once())
             ->method('convert')
             ->will($this->throwException(new ConverterException()));
 
         $converter = new ChainConverter();
-        $converter->addConverter($failing);
+        $converter->addConverter($failing, 'failing');
         $converter->convert($this->getFixtureContent('sample.html'));
     }
 }

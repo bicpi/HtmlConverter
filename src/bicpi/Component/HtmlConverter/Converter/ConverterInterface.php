@@ -1,7 +1,6 @@
 <?php
 
-namespace bicpi\Component\Html2Text\Converter;
-
+namespace bicpi\Component\HtmlConverter\Converter;
 
 interface ConverterInterface
 {
