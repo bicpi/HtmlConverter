@@ -2,9 +2,8 @@
 
 namespace bicpi\Component\Html2Text\Tests;
 
-use bicpi\Component\Html2Text\Converter\ConverterInterface;
 use bicpi\Component\Html2Text\Exception\ConverterException;
-use bicpi\Component\Html2Text\Html2Text;
+use bicpi\Component\Html2Text\Converter\ChainConverter;
 use bicpi\Component\Html2Text\Tests\Tool\BaseTestCase;
 
 class Html2TextTest extends BaseTestCase
@@ -16,7 +15,7 @@ class Html2TextTest extends BaseTestCase
      */
     function conversionShouldFailWithoutAnyRegisteredConverter()
     {
-        $converter = new Html2Text();
+        $converter = new ChainConverter();
         $converter->convert($this->getFixtureContent('sample.html'));
     }
 
@@ -31,7 +30,7 @@ class Html2TextTest extends BaseTestCase
             ->method('convert')
             ->will($this->returnValue('Foobar'));
 
-        $converter = new Html2Text();
+        $converter = new ChainConverter();
         $converter->addConverter($mockConverter);
         $plain = $converter->convert('<h1>Foobar</h1>');
 
@@ -51,7 +50,7 @@ class Html2TextTest extends BaseTestCase
             ->method('convert')
             ->will($this->throwException(new ConverterException()));
 
-        $converter = new Html2Text();
+        $converter = new ChainConverter();
         $converter->addConverter($failing);
         $converter->convert($this->getFixtureContent('sample.html'));
     }

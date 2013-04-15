@@ -1,12 +1,12 @@
 <?php
 
-namespace bicpi\Component\Html2Text;
+namespace bicpi\Component\Html2Text\Converter;
 
 use Symfony\Component\Process\Process;
 use bicpi\Component\Html2Text\Converter\ConverterInterface;
 use bicpi\Component\Html2Text\Exception\ConverterException;
 
-class Html2Text implements ConverterInterface
+class ChainConverter implements ConverterInterface
 {
     protected $converters = array();
 
