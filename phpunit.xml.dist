@@ -2,7 +2,7 @@
 <phpunit bootstrap="./autoload.php.dist" colors="true">
     <testsuites>
         <testsuite name="bicpi Test Suite">
-            <directory>./src/bicpi/Component/*/Tests/</directory>
+            <directory>./src/bicpi/*/Tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>

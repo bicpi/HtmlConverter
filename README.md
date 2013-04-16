@@ -1,15 +1,12 @@
-# bicpi's Component library
+# bicpi's HTML converter library
 
-## Components in this library:
-
-- [Html2Text](https://github.com/bicpi/bicpi-components/tree/master/doc/html2text/intro.md)
-Html2Text converter component
+This library offers conversion from raw HTML to plain text
 
 ## Running unit tests
 
 PHPUnit 3.5 or newer is required.
 To setup and run tests follow these steps:
 
-- go to the root directory of components
+- go to the root directory of this library
 - run: **composer install**
 - run: **phpunit**

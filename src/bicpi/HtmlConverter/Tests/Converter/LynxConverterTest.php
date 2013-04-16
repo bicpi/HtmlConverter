@@ -1,9 +1,9 @@
 <?php
 
-namespace bicpi\Component\HtmlConverter\Tests\Converter;
+namespace bicpi\HtmlConverter\Tests\Converter;
 
-use bicpi\Component\HtmlConverter\Tests\Tool\BaseTestCase;
-use bicpi\Component\HtmlConverter\Converter\LynxConverter;
+use bicpi\HtmlConverter\Tests\Tool\BaseTestCase;
+use bicpi\HtmlConverter\Converter\LynxConverter;
 
 class LynxConverterTest extends BaseTestCase
 {

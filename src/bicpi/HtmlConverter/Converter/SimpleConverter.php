@@ -1,6 +1,6 @@
 <?php
 
-namespace bicpi\Component\HtmlConverter\Converter;
+namespace bicpi\HtmlConverter\Converter;
 
 class SimpleConverter implements ConverterInterface
 {

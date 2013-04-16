@@ -1,9 +1,9 @@
 {
-    "name":        "bicpi/bicpi-components",
+    "name":        "bicpi/html-converter",
     "type":        "library",
-    "description": "bicpi's component library",
-    "keywords":    ["components", "html2text", "bicpi"],
-    "homepage":    "http://github.com/bicpi/bicpi-components",
+    "description": "HTML-to-Text converter library",
+    "keywords":    ["html2text", "bicpi"],
+    "homepage":    "http://github.com/bicpi/html-converter",
     "license":     "MIT",
 
     "authors": [
@@ -26,7 +26,7 @@
 
     "autoload": {
         "psr-0": {
-            "bicpi\\Component": "src/"
+            "bicpi": "src/"
         }
     }
 }

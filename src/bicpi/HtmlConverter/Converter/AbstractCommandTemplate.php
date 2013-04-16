@@ -1,9 +1,9 @@
 <?php
 
-namespace bicpi\Component\HtmlConverter\Converter;
+namespace bicpi\HtmlConverter\Converter;
 
 use Symfony\Component\Process\Process;
-use bicpi\Component\HtmlConverter\Exception\ConverterException;
+use bicpi\HtmlConverter\Exception\ConverterException;
 
 abstract class AbstractCommandTemplate implements ConverterInterface
 {

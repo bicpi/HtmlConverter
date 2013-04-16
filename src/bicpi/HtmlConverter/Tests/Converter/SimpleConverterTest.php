@@ -1,10 +1,10 @@
 <?php
 
-namespace bicpi\Component\HtmlConverter\Tests\Converter;
+namespace bicpi\HtmlConverter\Tests\Converter;
 
-use bicpi\Component\HtmlConverter\Converter\SimpleConverter;
-use bicpi\Component\HtmlConverter\Html2Text;
-use bicpi\Component\HtmlConverter\Tests\Tool\BaseTestCase;
+use bicpi\HtmlConverter\Converter\SimpleConverter;
+use bicpi\HtmlConverter\Html2Text;
+use bicpi\HtmlConverter\Tests\Tool\BaseTestCase;
 
 class SimpleConverterTest extends BaseTestCase
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace bicpi\Component\HtmlConverter\Tests;
+namespace bicpi\HtmlConverter\Tests;
 
-use bicpi\Component\HtmlConverter\Exception\ConverterException;
-use bicpi\Component\HtmlConverter\Converter\ChainConverter;
-use bicpi\Component\HtmlConverter\Tests\Tool\BaseTestCase;
+use bicpi\HtmlConverter\Exception\ConverterException;
+use bicpi\HtmlConverter\Converter\ChainConverter;
+use bicpi\HtmlConverter\Tests\Tool\BaseTestCase;
 
 class Html2TextTest extends BaseTestCase
 {
@@ -24,7 +24,7 @@ class Html2TextTest extends BaseTestCase
      */
     function conversionSuccessWithMockConverter()
     {
-        $mockConverter = $this->getMock('bicpi\Component\HtmlConverter\Converter\ConverterInterface');
+        $mockConverter = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
         $mockConverter
             ->expects($this->once())
             ->method('convert')
@@ -44,7 +44,7 @@ class Html2TextTest extends BaseTestCase
      */
     function conversionShouldFailWithoutAnyConverterHandlingTheConversion()
     {
-        $failing = $this->getMock('bicpi\Component\HtmlConverter\Converter\ConverterInterface');
+        $failing = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
         $failing
             ->expects($this->once())
             ->method('convert')

@@ -1,6 +1,6 @@
 <?php
 
-namespace bicpi\Component\HtmlConverter\Tests\Tool;
+namespace bicpi\HtmlConverter\Tests\Tool;
 
 abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 {

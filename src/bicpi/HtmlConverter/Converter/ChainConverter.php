@@ -1,10 +1,10 @@
 <?php
 
-namespace bicpi\Component\HtmlConverter\Converter;
+namespace bicpi\HtmlConverter\Converter;
 
 use Symfony\Component\Process\Process;
-use bicpi\Component\HtmlConverter\Converter\ConverterInterface;
-use bicpi\Component\HtmlConverter\Exception\ConverterException;
+use bicpi\HtmlConverter\Converter\ConverterInterface;
+use bicpi\HtmlConverter\Exception\ConverterException;
 
 class ChainConverter implements ConverterInterface
 {
