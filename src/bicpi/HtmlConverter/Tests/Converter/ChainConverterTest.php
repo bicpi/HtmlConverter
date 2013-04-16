@@ -22,6 +22,27 @@ class Html2TextTest extends BaseTestCase
     /**
      * @test
      */
+    function converterManagementShouldWork()
+    {
+        $mockConverter1 = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
+        $mockConverter2 = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
+        $mockConverter3 = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
+
+        $converter = new ChainConverter();
+        $converter->addConverter($mockConverter1, 'mock1');
+        $this->assertEquals(1, count($converter->getConverters()));
+        $converter->addConverter($mockConverter2, 'mock2');
+        $this->assertTrue($converter->hasConverter('mock2'));
+        $converter->addConverter($mockConverter3, 'mock3');
+        $this->assertEquals(3, count($converter->getConverters()));
+        $converter->removeConverter('mock2');
+        $this->assertFalse($converter->hasConverter('mock2'));
+        $this->assertEquals(2, count($converter->getConverters()));
+    }
+
+    /**
+     * @test
+     */
     function conversionSuccessWithMockConverter()
     {
         $mockConverter = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');

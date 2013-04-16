@@ -2,7 +2,7 @@
     "name":        "bicpi/html-converter",
     "type":        "library",
     "description": "HTML-to-Text converter library",
-    "keywords":    ["html2text", "bicpi"],
+    "keywords":    ["html", "text", "converter", "bicpi"],
     "homepage":    "http://github.com/bicpi/html-converter",
     "license":     "MIT",
 
