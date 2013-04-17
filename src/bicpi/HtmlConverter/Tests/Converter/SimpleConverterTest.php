@@ -18,6 +18,6 @@ class SimpleConverterTest extends BaseTestCase
         $converter = new SimpleConverter();
         $plain = $converter->convert($html);
 
-        $this->assertEquals(strip_tags($html), $plain);
+        $this->assertEquals($this->getFixtureContent('simple-sample-result.txt'), $plain);
     }
 }
