@@ -1,6 +1,6 @@
 <?php
 
-namespace bicpi\HtmlConverter\Tests\Converter;
+namespace bicpi\HtmlConverter\Converter;
 
 use bicpi\HtmlConverter\Converter\SimpleConverter;
 use bicpi\HtmlConverter\Tests\Tool\BaseTestCase;

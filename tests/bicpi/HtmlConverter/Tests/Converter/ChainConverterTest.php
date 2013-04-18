@@ -1,6 +1,6 @@
 <?php
 
-namespace bicpi\HtmlConverter\Tests;
+namespace bicpi\HtmlConverter;
 
 use bicpi\HtmlConverter\Exception\ConverterException;
 use bicpi\HtmlConverter\Converter\ChainConverter;
