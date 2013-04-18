@@ -16,5 +16,4 @@ class Html2TextConverter extends AbstractCommandTemplate
         return html_entity_decode($text, null, 'utf-8');
     }
 
-
 }

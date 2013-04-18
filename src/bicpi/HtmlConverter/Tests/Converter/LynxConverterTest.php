@@ -10,7 +10,7 @@ class LynxConverterTest extends BaseTestCase
     /**
      * @test
      */
-    function conversionShouldRemoveHtmlAndFormatPlainText()
+    public function conversionShouldRemoveHtmlAndFormatPlainText()
     {
         $converter = new LynxConverter();
         $plain = $converter->convert($this->getFixtureContent('sample.html'));

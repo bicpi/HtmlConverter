@@ -14,7 +14,7 @@ abstract class AbstractCommandTemplate implements ConverterInterface
 
     /**
      * @param $html Raw HTML to be converted
-     * @return string Converted plain text
+     * @return string             Converted plain text
      * @throws \Exception
      * @throws ConverterException
      */

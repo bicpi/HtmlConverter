@@ -10,7 +10,7 @@ class AbstractCommandTemplateTest extends BaseTestCase
      * @test
      * @expectedException bicpi\HtmlConverter\Exception\ConverterException
      */
-    function failingConversionShouldAbort()
+    public function failingConversionShouldAbort()
     {
         $converter = $this->getMockForAbstractClass('bicpi\HtmlConverter\Converter\AbstractCommandTemplate');
         $converter

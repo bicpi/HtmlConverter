@@ -10,7 +10,7 @@ class Html2TextConverterTest extends BaseTestCase
     /**
      * @test
      */
-    function conversionShouldRemoveHtmlAndFormatPlainText()
+    public function conversionShouldRemoveHtmlAndFormatPlainText()
     {
         $converter = new Html2TextConverter();
         $plain = $converter->convert($this->getFixtureContent('sample.html'));

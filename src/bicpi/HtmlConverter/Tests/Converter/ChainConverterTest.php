@@ -13,7 +13,7 @@ class Html2TextTest extends BaseTestCase
      * @expectedException \RuntimeException
      * @expectedExceptionMessage No converter registered. At least one converter is required.
      */
-    function conversionShouldFailWithoutAnyRegisteredConverter()
+    public function conversionShouldFailWithoutAnyRegisteredConverter()
     {
         $converter = new ChainConverter();
         $converter->convert($this->getFixtureContent('sample.html'));
@@ -22,7 +22,7 @@ class Html2TextTest extends BaseTestCase
     /**
      * @test
      */
-    function converterManagementShouldWork()
+    public function converterManagementShouldWork()
     {
         $mockConverter1 = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
         $mockConverter2 = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
@@ -43,7 +43,7 @@ class Html2TextTest extends BaseTestCase
     /**
      * @test
      */
-    function conversionSuccessWithMockConverter()
+    public function conversionSuccessWithMockConverter()
     {
         $mockConverter = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
         $mockConverter
@@ -63,7 +63,7 @@ class Html2TextTest extends BaseTestCase
      * @expectedException \RuntimeException
      * @expectedExceptionMessage No converter was able to handle conversion.
      */
-    function conversionShouldFailWithoutAnyConverterHandlingTheConversion()
+    public function conversionShouldFailWithoutAnyConverterHandlingTheConversion()
     {
         $failing = $this->getMock('bicpi\HtmlConverter\Converter\ConverterInterface');
         $failing

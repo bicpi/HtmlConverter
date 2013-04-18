@@ -2,7 +2,6 @@
 
 namespace bicpi\HtmlConverter\Converter;
 
-use Symfony\Component\Process\Process;
 use bicpi\HtmlConverter\Converter\ConverterInterface;
 use bicpi\HtmlConverter\Exception\ConverterException;
 
