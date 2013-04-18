@@ -1,10 +1,22 @@
 <?php
 
+/*
+ * This file is part of the HtmlConverter library
+ *
+ * (c) Philipp Rieber <p.rieber@webflips.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace bicpi\HtmlConverter\Converter;
 
 use Symfony\Component\Process\Process;
 use bicpi\HtmlConverter\Exception\ConverterException;
 
+/**
+ * Template for command line converters.
+ */
 abstract class AbstractCommandTemplate implements ConverterInterface
 {
     /**
@@ -13,10 +25,10 @@ abstract class AbstractCommandTemplate implements ConverterInterface
     abstract public function getCommand();
 
     /**
-     * @param $html Raw HTML to be converted
+     * @param  string             $html Raw HTML to be converted
      * @return string             Converted plain text
-     * @throws \Exception
-     * @throws ConverterException
+     * @throws ConverterException When command does not execute successfully
+     * @throws \Exception         When something unexpected happens
      */
     public function convert($html)
     {

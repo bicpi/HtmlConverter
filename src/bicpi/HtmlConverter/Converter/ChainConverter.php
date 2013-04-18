@@ -1,16 +1,30 @@
 <?php
 
+/*
+ * This file is part of the HtmlConverter library
+ *
+ * (c) Philipp Rieber <p.rieber@webflips.net>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace bicpi\HtmlConverter\Converter;
 
 use bicpi\HtmlConverter\Converter\ConverterInterface;
 use bicpi\HtmlConverter\Exception\ConverterException;
 
+/**
+ * Converter that chains multiple other converters.
+ *
+ * First appropriate converter will handle the conversion
+ */
 class ChainConverter implements ConverterInterface
 {
     protected $converters = array();
 
     /**
-     * @param ConverterInterface $converter Converter to be added
+     * @param $converter ConverterInterface Converter to be added
      * @param $alias Converter alias
      */
     public function addConverter(ConverterInterface $converter, $alias)
@@ -27,7 +41,7 @@ class ChainConverter implements ConverterInterface
     }
 
     /**
-     * @param $alias Converter alias
+     * @param $alias Converter alias to check for
      * @return bool Indicates existance of converter in the converter chain
      */
     public function hasConverter($alias)
@@ -36,9 +50,9 @@ class ChainConverter implements ConverterInterface
     }
 
     /**
-     * @param $alias Converter alias
-     * @return ConverterInterface
-     * @throws \RuntimeException
+     * @param $alias Converter alias to retrieve
+     * @return ConverterInterface Aliased converter
+     * @throws \RuntimeException  When converter was not found
      */
     public function getConverter($alias)
     {
@@ -50,7 +64,7 @@ class ChainConverter implements ConverterInterface
     }
 
     /**
-     * @param $alias Converter alias
+     * @param $alias Converter alias to remove
      */
     public function removeConverter($alias)
     {
@@ -59,6 +73,9 @@ class ChainConverter implements ConverterInterface
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function convert($html)
     {
         if (!$this->converters) {

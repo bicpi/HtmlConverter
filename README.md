@@ -59,6 +59,26 @@ $converter = new Html2TextConverter();
 $plain = $converter->convert($html);
 ```
 
+### ChainConverter
+
+The `ChainConverter` offers converter chaining so that the first appropriate converter will handle the conversion.
+
+```php
+<?php
+
+use bicpi\HtmlConverter\Converter\ChainConverter;
+use bicpi\HtmlConverter\Converter\LynxConverter;
+use bicpi\HtmlConverter\Converter\SimpleConverter;
+
+$html = '... <h1>... you HTML content ...</h1> ...';
+$converter = new ChainConverter();
+$converter->addConverter(new LynxConverter());
+$converter->addConverter(new SimpleConverter());
+$plain = $converter->convert($html);
+```
+In the above example the conversion will be handled by the `LynxConverter` - provided that the `lynx` package is
+available. If not, the `SimpleConverter` will be used as a fallback. This
+
 ## Running unit tests
 
 PHPUnit 3.5 or newer is required. To setup and run tests follow these steps:
