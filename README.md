@@ -77,7 +77,8 @@ $converter->addConverter(new SimpleConverter());
 $plain = $converter->convert($html);
 ```
 In the above example the conversion will be handled by the `LynxConverter` - provided that the `lynx` package is
-available. If not, the `SimpleConverter` will be used as a fallback. This
+available. If not, the `SimpleConverter` will be used as a fallback. This for instance would be useful when deploying
+to a machine without `lynx` installed but a development machine without the package - e.g. Windows.
 
 ## Running unit tests
 
