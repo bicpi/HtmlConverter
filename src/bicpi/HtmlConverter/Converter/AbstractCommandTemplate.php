@@ -35,20 +35,15 @@ abstract class AbstractCommandTemplate implements ConverterInterface
         $path = sys_get_temp_dir() . DIRECTORY_SEPARATOR . md5(uniqid(mt_rand()));
         file_put_contents($path, $html);
 
-        try {
-            $process = new Process(sprintf($this->getCommand(), escapeshellarg($path)));
-            $process->run();
+        $process = new Process(sprintf($this->getCommand(), escapeshellarg($path)));
+        $process->run();
+        
+        unlink($path);
 
-            if (!$process->isSuccessful()) {
-                throw new ConverterException($process->getErrorOutput());
-            }
-
-            return $process->getOutput();
-
-            unlink($path);
-        } catch (\Exception $e) {
-            unlink($path);
-            throw $e;
+        if (!$process->isSuccessful()) {
+            throw new ConverterException($process->getErrorOutput());
         }
+
+        return $process->getOutput();
     }
 }
