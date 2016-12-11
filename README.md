@@ -3,7 +3,7 @@
 HtmlConverter is a PHP5 library that provides easy HTML-to-Text conversion. This is useful, for example, for
 automatically creating plain text parts of HTML emails.
 
-[![Build Status](https://secure.travis-ci.org/bicpi/HtmlConverter.png)](http://travis-ci.org/bicpi/HtmlConverter)
+[![Build Status](https://travis-ci.org/bicpi/HtmlConverter.svg?branch=1.0)](https://travis-ci.org/bicpi/HtmlConverter)
 
 ## Usage
 
