@@ -1,9 +1,9 @@
 # bicpi's HtmlConverter library
 
-HtmlConverter is a PHP5 library that provides easy HTML-to-Text conversion. This is useful, for example, for
+HtmlConverter is a PHP library that provides easy HTML-to-Text conversion. This is useful, for example, for
 automatically creating plain text parts of HTML emails.
 
-[![Build Status](https://secure.travis-ci.org/bicpi/HtmlConverter.png)](http://travis-ci.org/bicpi/HtmlConverter)
+[![Build Status](https://travis-ci.org/bicpi/HtmlConverter.svg?branch=master)](https://travis-ci.org/bicpi/HtmlConverter)
 
 ## Usage
 
@@ -82,8 +82,8 @@ to a machine without `lynx` installed but a development machine without the pack
 
 ## Running unit tests
 
-PHPUnit 3.5 or newer is required. To setup and run tests follow these steps:
+To setup and run tests follow these steps:
 
 1. Go to the root directory of this library
 2. Run: `composer install`
-3. Run: `phpunit`
+3. Run: `./vendor/bin/phpunit`

@@ -15,6 +15,6 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 {
     public function getFixtureContent($fixture)
     {
-        return file_get_contents(dirname(__DIR__).'/Fixtures/'.$fixture);
+        return file_get_contents(dirname(__DIR__) . '/Fixtures/' .$fixture);
     }
 }

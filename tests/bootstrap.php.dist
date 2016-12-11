@@ -1,7 +1,0 @@
-<?php
-
-$baseDir = dirname(__DIR__);
-
-$loader = require_once $baseDir.'/vendor/autoload.php';
-$loader->add('bicpi\HtmlConverter\Tests\\', __DIR__);
-$loader->register();
